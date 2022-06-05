@@ -1,0 +1,26 @@
+type Taxi {
+    id: ID!
+    number: String
+    make: String
+    model: String
+    seats: Int
+    driver: Driver
+}
+
+type Driver {
+    id: ID!
+    firstName: String
+    lastName: String
+    rating: Int
+}
+
+type Query {
+    allTaxis: [Taxi]
+    findOne(id: ID!): Taxi
+    searchTaxis(lat: Float, lon: Float): [Taxi]
+}
+
+input GeoLocation {
+    latitude: Float
+    longitude: Float
+}
