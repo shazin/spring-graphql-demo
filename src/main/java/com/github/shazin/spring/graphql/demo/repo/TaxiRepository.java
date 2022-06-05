@@ -17,6 +17,11 @@ public class TaxiRepository {
         return taxis;
     }
 
+    public List<Taxi> findByGeoCoordinates(Float lat, Float lon) {
+        // Mocking a search call
+        return findAll();
+    }
+
     public Taxi findOne(String id) {
         return findAll().stream().filter(t -> t.id().equals(id)).findFirst().orElseThrow(() -> new RuntimeException("Taxi with id "+id+" not found"));
     }

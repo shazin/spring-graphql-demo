@@ -30,7 +30,7 @@ public class TaxiController {
     @SchemaMapping(typeName = "Query", field = "searchTaxis")
     public List<Taxi> searchTaxis(@Argument Float lat, @Argument Float lon) {
         System.out.println(lat + ", " + lon);
-        return taxiRepository.findAll();
+        return taxiRepository.findByGeoCoordinates(lat, lon);
     }
 
 }

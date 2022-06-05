@@ -19,8 +19,3 @@ type Query {
     findOne(id: ID!): Taxi
     searchTaxis(lat: Float, lon: Float): [Taxi]
 }
-
-input GeoLocation {
-    latitude: Float
-    longitude: Float
-}
